@@ -7,10 +7,10 @@ inputs:
 outputs:
   user-number:
     description: 'User account number'
-    value: ${{ }}
+    value: ${{ steps.mapper.outputs.user-id }}
 runs:
   using: "composite"
   steps:
     - id: mapper
-      run: echo "::set-output name=user-id::$(echo ${{ github.action_path }}/get_user.sh ${{ inputs.tag-name }})"
+      run: ${{ github.action_path }}/get_user.sh ${{ inputs.tag-name }}
       shell: bash
