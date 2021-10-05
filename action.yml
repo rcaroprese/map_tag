@@ -1,0 +1,16 @@
+name: 'Tag Mapper'
+description: 'Map tags to numbers'
+inputs:
+  tag-name:
+    description: 'Github tag'
+    required: true
+outputs:
+  user-number:
+    description: 'User account number'
+    value: ${{ }}
+runs:
+  using: "composite"
+  steps:
+    - id: mapper
+      run: echo "::set-output name=user-id::$(echo ${{ github.action_path }}/get_user.sh ${{ inputs.tag-name }})"
+      shell: bash
