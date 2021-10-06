@@ -2,10 +2,10 @@ shopt -s extglob
 tag=$1
 
 user=$(case $tag in
-    dev* ) echo $DEV_ENV;;
-    tst* ) echo $TST_ENV;;
-    acc* ) echo $ACC_ENV;;
-    prd* ) echo $PRD_ENV;;
+    dev* ) echo 0;;
+    tst* ) echo 1;;
+    acc* ) echo 2;;
+    prd* ) echo 3;;
 esac)
 
 echo ::set-output name=user-number::"$user"
