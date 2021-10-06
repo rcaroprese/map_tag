@@ -12,5 +12,10 @@ runs:
   using: "composite"
   steps:
     - id: mapper
+      env:
+        DEV_ENV: ${{ secrets.DEV_ENV }}
+        TST_ENV: ${{ secrets.TST_ENV }}
+        ACC_ENV: ${{ secrets.ACC_ENV }}
+        PRD_ENV: ${{ secrets.PRD_ENV }}
       run: ${{ github.action_path }}/get_user.sh ${{ inputs.tag-name }}
       shell: bash
