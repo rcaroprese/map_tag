@@ -7,7 +7,7 @@ inputs:
 outputs:
   user-number:
     description: 'User account number'
-    value: ${{ steps.mapper.outputs.user-id }}
+    value: ${{ steps.mapper.outputs.user-number }}
 runs:
   using: "composite"
   steps:
