@@ -12,5 +12,5 @@ runs:
   using: "composite"
   steps:
     - id: mapper
-      run: ::set-output name=user-number::${{ github.action_path }}/get_user.sh ${{ inputs.tag-name }}
+      run: ${{ github.action_path }}/get_user.sh ${{ inputs.tag-name }}
       shell: bash
