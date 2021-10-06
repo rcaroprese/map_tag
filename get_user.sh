@@ -8,4 +8,4 @@ user=$(case $tag in
     prd* ) echo 4;;
 esac)
 
-echo "::set-output name=user-number::$(user)"
+echo "::set-output name=user-number::$user"
